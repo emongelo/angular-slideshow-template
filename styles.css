@@ -1,0 +1,130 @@
+.slideshow {
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 320px;
+}
+
+.slideshow-elements {
+	overflow: hidden;
+	height: 320px;
+	position: relative;
+}
+
+.slideshow-element-cluster {
+	display: inline-block;
+	height: 320px;
+	position: relative;
+	top: 0px;
+	z-index: 0;
+}
+
+.slideshow-img {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: 50%;
+	background-image: url("https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150");
+}
+
+/**
+ * -- slideshow Navigation
+ */
+.slideshow .slideshow-nav-content [class*="icon-"] {
+	position: absolute;
+	top: 50%;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	background: #fff;
+	text-align: center;
+	font-size: 1rem;
+	border: 1px solid #000;
+}
+
+.slideshow .slideshow-nav-content {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	z-index: 97;
+}
+
+.slideshow .slideshow-arrow-left {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background: #fff;
+	border-radius: 50%;
+	height: 24px;
+	width: 24px;
+	z-index: 999;
+}
+
+.slideshow .slideshow-arrow-right {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	background: #fff;
+	border-radius: 50%;
+	height: 24px;
+	width: 24px;
+	z-index: 999;
+}
+
+/**
+ * -- slideshow Footer
+ */
+
+.slideshow .slideshow-footer {
+	position: absolute;
+	box-sizing: border-box;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	width: 100%;
+	padding: 0;
+	z-index: 1;
+}
+
+.slideshow .slideshow-balls-ctn {
+	bottom: 2px;
+	left: 45%;
+	padding: 5px;
+}
+
+.slideshow .slideshow-balls-ctn .ball {
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	display: inline-block;
+	margin-right: 8px;
+}
+
+.slideshow .slideshow-balls-ctn .ball:last-child {
+	margin-right: 0;
+}
+
+.slideshow .slideshow-balls-ctn .ball--selected {
+	background: #fff;
+}
+
+/**
+ * -- Helpers
+ */
+.slideshow .left {
+	left: 8px;
+}
+
+.slideshow .right {
+	right: 8px;
+}
+
+.slideshow .link-style {
+	cursor: pointer;
+}
+
+.slideshow .transition {
+	transition-property: all;
+	transition-duration: 400ms;
+}

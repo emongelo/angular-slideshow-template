@@ -1,0 +1,46 @@
+<!-- Requirements -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+<!-- 8 Pixels Please | www.8pxplease.com -->
+<link href="epp.css" media="all" rel="stylesheet">
+
+<!-- Horizontal Scrolling Support -->
+<script src="hamster.js"></script>
+
+<!-- Custom Styles -->
+<link href="styles.css" media="all" rel="stylesheet">
+
+<main ng-app="Slideshow">
+	<div class="epp-cl-1 slideshow" ng-controller="slideshowController as slideshow" ng-init="slideshow.init()">
+
+		<div class="slideshow-nav-content">
+			<span ng-click="slideshow.prevSlide()" class="left icon-arrow-left link-style"> < </span>
+			<span ng-click="slideshow.nextSlide()" class="right icon-arrow-right link-style"> > </span>
+		</div>
+
+		<div class="epp-ctn slideshow-elements">
+			<div class="epp-ctn epp-cl-1 slideshow-element-cluster transition" ng-repeat="cluster in slideshow.clusters track by $index" ng-class="{'first-cluster': $index == 0}">
+
+				<div class="epp-cl-1-2">
+					<img src="{{cluster.image}}?v={{$index}}" width="100%">
+				</div>
+
+				<div class="epp-cl-1-2 epp-air-left-8">
+					<h3>{{cluster.title}}</h3>
+					<p>{{cluster.text}}</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="slideshow-footer align-center">
+			<div class="slideshow-balls-ctn">
+				<div data-ng-repeat="cluster in slideshow.clusters" data-ng-class="{'ball--selected': slideshow.isBallSelected($index)}" data-ng-click="slideshow.viewSlide($index)" class="ball link-style"></div>
+			</div>
+		</div>
+
+	</div>
+</main>
+
+<!-- slideshow Script -->
+<script src="angular-slideshow.js"></script>

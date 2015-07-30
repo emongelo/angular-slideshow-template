@@ -1,0 +1,13 @@
+{
+  "name": "angular-slideshow-template",
+  "version": "0.1.0",
+  "main": "angular-slideshow.js",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "angular": ">=1.0.6",
+    "hamsterjs": ">=1.0.2",
+    "angular-mousewheel": ">=1.0.4"
+  }
+}
