@@ -17,7 +17,6 @@ Slideshow.directive('slideshow', function() {
       var element = $element[0];
       this.clusters = element.attributes['slideshow-json'] ? slideshowElements : element.querySelectorAll('.slideshow-element-cluster');
 
-      console.log(this.clusters);
       this.currentPage = 0;
 
       /**
