@@ -11,35 +11,101 @@
 <link href="styles.css" media="all" rel="stylesheet">
 
 <main ng-app="Slideshow">
-	<div class="epp-cl-1 slideshow" ng-controller="slideshowController as slideshow" ng-init="slideshow.init()">
 
-		<div class="slideshow-nav-content">
-			<span ng-click="slideshow.prevSlide()" class="left icon-arrow-left link-style"> < </span>
-			<span ng-click="slideshow.nextSlide()" class="right icon-arrow-right link-style"> > </span>
+
+	<article class="first-slideshow">
+
+		<h3>As module with json</h3>
+		<div class="epp-cl-1 slideshow" slideshow slideshow-json="true">
+
+			<div class="slideshow-nav-content">
+				<span ng-click="slideshow.prevSlide()" class="left icon-arrow-left link-style"> < </span>
+				<span ng-click="slideshow.nextSlide()" class="right icon-arrow-right link-style"> > </span>
+			</div>
+
+			<div class="epp-ctn slideshow-elements">
+				<div class="epp-ctn epp-cl-1 slideshow-element-cluster transition" ng-repeat="cluster in slideshow.clusters track by $index" ng-class="{'first-cluster': $index == 0}">
+
+					<div class="epp-cl-1-2">
+						<img ng-src="{{cluster.image}}?v={{$index}}" width="100%">
+					</div>
+
+					<div class="epp-cl-1-2 epp-air-left-8">
+						<h3>{{cluster.title}}</h3>
+						<p>{{cluster.text}}</p>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="slideshow-footer align-center">
+				<div class="slideshow-balls-ctn">
+					<div data-ng-repeat="cluster in slideshow.clusters" data-ng-class="{'ball--selected': slideshow.isBallSelected($index)}" data-ng-click="slideshow.viewSlide($index)" class="ball link-style"></div>
+				</div>
+			</div>
+
 		</div>
+	</article>
 
-		<div class="epp-ctn slideshow-elements">
-			<div class="epp-ctn epp-cl-1 slideshow-element-cluster transition" ng-repeat="cluster in slideshow.clusters track by $index" ng-class="{'first-cluster': $index == 0}">
+	<article class="epp-space-top-32 second-slideshow">
+		<h3>As directive, without json</h3>
+		<div class="epp-cl-1 slideshow" slideshow>
 
-				<div class="epp-cl-1-2">
-					<img src="{{cluster.image}}?v={{$index}}" width="100%">
+			<div class="slideshow-nav-content">
+				<span ng-click="slideshow.prevSlide()" class="left icon-arrow-left link-style"> < </span>
+				<span ng-click="slideshow.nextSlide()" class="right icon-arrow-right link-style"> > </span>
+			</div>
+
+			<div class="epp-ctn slideshow-elements">
+				<div class="epp-ctn epp-cl-1 slideshow-element-cluster transition first-cluster">
+
+					<div class="epp-cl-1-2">
+						<img src="http://lorempixel.com/400/200?v=1" width="100%">
+					</div>
+
+					<div class="epp-cl-1-2 epp-air-left-8">
+						<h3>Step 1</h3>
+						<p>Paragraph 1</p>
+					</div>
+
 				</div>
 
-				<div class="epp-cl-1-2 epp-air-left-8">
-					<h3>{{cluster.title}}</h3>
-					<p>{{cluster.text}}</p>
+				<div class="epp-ctn epp-cl-1 slideshow-element-cluster transition">
+
+					<div class="epp-cl-1-2">
+						<img src="http://lorempixel.com/400/200?v=2" width="100%">
+					</div>
+
+					<div class="epp-cl-1-2 epp-air-left-8">
+						<h3>Step 2</h3>
+						<p>Paragraph 2</p>
+					</div>
+
+				</div>
+
+				<div class="epp-ctn epp-cl-1 slideshow-element-cluster transition">
+
+					<div class="epp-cl-1-2">
+						<img src="http://lorempixel.com/400/200?v=3" width="100%">
+					</div>
+
+					<div class="epp-cl-1-2 epp-air-left-8">
+						<h3>Step 3</h3>
+						<p>Paragraph 3</p>
+					</div>
+
 				</div>
 
 			</div>
-		</div>
 
-		<div class="slideshow-footer align-center">
-			<div class="slideshow-balls-ctn">
-				<div data-ng-repeat="cluster in slideshow.clusters" data-ng-class="{'ball--selected': slideshow.isBallSelected($index)}" data-ng-click="slideshow.viewSlide($index)" class="ball link-style"></div>
+			<div class="slideshow-footer align-center">
+				<div class="slideshow-balls-ctn">
+					<div data-ng-repeat="cluster in slideshow.clusters track by $index" data-ng-class="{'ball--selected': slideshow.isBallSelected($index)}" data-ng-click="slideshow.viewSlide($index)" class="ball link-style"></div>
+				</div>
 			</div>
-		</div>
 
-	</div>
+		</div>
+	</article>
 </main>
 
 <!-- slideshow Script -->
