@@ -2,26 +2,24 @@
 	position: relative;
 	white-space: nowrap;
 	overflow: hidden;
-	height: 320px;
+	height: 100px;
 }
 
 .slideshow-elements {
 	overflow: hidden;
-	height: 320px;
+	height: 120px;
 	position: relative;
 }
 
 .slideshow-element-cluster {
 	display: inline-block;
-	height: 320px;
-	position: relative;
-	top: 0px;
-	z-index: 0;
+	height: 120px;
+	overflow: hidden;
+	transition: all, 400ms, cubic-bezier(0.25, 0.25, 0.75, 0.75);
 }
 
-.slideshow-img {
-	height: 100%;
-	width: 100%;
+.slideshow img {
+	height: 120px;
 	background-size: cover;
 	background-position: 50%;
 	background-image: url("https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150");
@@ -122,9 +120,4 @@
 
 .slideshow .link-style {
 	cursor: pointer;
-}
-
-.slideshow .transition {
-	transition-property: all;
-	transition-duration: 400ms;
 }
