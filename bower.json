@@ -6,8 +6,6 @@
     "**/.*"
   ],
   "dependencies": {
-    "angular": ">=1.0.6",
-    "hamsterjs": ">=1.0.2",
-    "angular-mousewheel": ">=1.0.4"
+    "angular": ">=1.0.6"
   }
 }
